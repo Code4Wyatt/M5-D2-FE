@@ -21,7 +21,7 @@ function BlogItem(props) {
         console.log(data);
         setBlogDetails(data);
         console.log(blogDetails);
-        console.log("Blog data: ", data);
+        console.log("Blog data: ", blogDetails);
       }
     } catch (error) {
       console.log(error)
@@ -33,7 +33,7 @@ function BlogItem(props) {
   return (
     <Link to={`/blog/${props._id}`} className="blog-link">
       <Card className="blog-card">
-        <Card.Img variant="top" src={props.cover} className="blog-cover" />
+        <Card.Img variant="top" src={cover} className="blog-cover" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
         </Card.Body>
