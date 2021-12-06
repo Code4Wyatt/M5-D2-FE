@@ -5,7 +5,7 @@ import BlogItem from "../blog-item";
 export default class BlogList extends Component {
   state = {
     blogData: [],
-  };
+  }
 
   async fetchBlogData() {
     let response = await fetch(`${process.env.REACT_APP_BE_PROD_URL}/blogs`);
