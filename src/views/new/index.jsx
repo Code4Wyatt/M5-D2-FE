@@ -28,15 +28,19 @@ const NewBlogPost = () => {
     console.log(newBlogPost);
   };
 
+  const newBlogPost = {
+    title: document.getElementById("name").value,
+
+  }
   try {
     let response = await fetch("https://striveblogsite.herokuapp.com/blogs", {
       method: "POST",
       body: JSON.stringify(newBlogPost),
     });
     if (response.ok) {
-      let data = await response.json();
-      await submitFile(data._id);
-      props.setShow(false);
+      alert("Blog post posted!")
+    } else {
+      alert("Failed to post blog")
     }
   } catch (error) {
     console.log(error);
