@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import BlogItem from "../blog-item";
+import { useParams } from "react-router";
 // import posts from "../../../data/posts.json";
-export default class BlogList extends Component {
+const BlogList = (props) => {
   state = {
     blogData: [],
-  }
+  };
 
   async fetchBlogData() {
     let response = await fetch(`${process.env.REACT_APP_BE_PROD_URL}/blogs`);
@@ -15,11 +16,11 @@ export default class BlogList extends Component {
         blogData
       })
     }
-  }
+  };
 
   componentDidMount() {
     this.fetchBlogData();
-  }
+  };
 
   render() {
     return (
@@ -32,4 +33,4 @@ export default class BlogList extends Component {
       </Row>
     );
   }
-}
+};
