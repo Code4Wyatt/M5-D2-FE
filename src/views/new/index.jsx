@@ -25,11 +25,11 @@ export default class NewBlogPost extends Component {
           <Form.Group controlId="blog-category" className="mt-3">
             <Form.Label>Category</Form.Label>
             <Form.Control size="lg" as="select">
-              <option>Category1</option>
-              <option>Category2</option>
-              <option>Category3</option>
-              <option>Category4</option>
-              <option>Category5</option>
+              <option>Comedy</option>
+              <option>Informative</option>
+              <option>Music</option>
+              <option>Art</option>
+              <option>Technology</option>
             </Form.Control>
           </Form.Group>
           <Form.Group controlId="blog-content" className="mt-3">
