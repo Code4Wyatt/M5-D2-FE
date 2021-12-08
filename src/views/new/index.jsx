@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState, useParams } from "react";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 import { Container, Form, Button } from "react-bootstrap";
 import "./styles.css";
-import { useParams } from "react";
-import { useState } from "react";
 
-const NewBlogPost = () => {
+
+const NewBlogPost = async () => {
   const params = useParams();
 
   const [newBlogPost, setNewBlogPost] = useState({
@@ -17,7 +16,7 @@ const NewBlogPost = () => {
   });
 
   const handleInput = (propertyName, value) => {
-    setNewPost({
+    setNewBlogPost({
       ...newBlogPost,
       [propertyName]: value,
     });
@@ -28,7 +27,7 @@ const NewBlogPost = () => {
     console.log(newBlogPost);
   };
 
-  const newBlogPost = {
+  const newBlogPostValue = {
     title: document.getElementById("name").value,
 
   }
@@ -88,3 +87,5 @@ const NewBlogPost = () => {
     </Container>
   );
 };
+
+export default NewBlogPost
